@@ -22,7 +22,7 @@ public class Main {
                     allMonths = monthlyReport.ReadMonths();
                     mothsHere = true;
                     for (int i = 0; i < allMonths.size(); i++) {
-                        content.MonthFromNum(i);
+                        System.out.println(content.MonthFromNum(i));
                         for(int j = 0; j < allMonths.get(i).size(); j++){
                             content.PrintContentMonth(allMonths.get(i).get(j));
                         }
@@ -72,19 +72,23 @@ public class Main {
                     if(!mothsHere || !yearsHere){
                         allMonths = monthlyReport.ReadMonths();
                         allYears = yearlyReport.ReadYears();
-                    }
+                        System.out.println("Внимание, вы забыли о том, что нужно считать отчеты, разве я делал первые 2 пункта меню просто так?");
+                    }else{
                         for(int i = 0; i < allMonths.size(); i++){
-                            System.out.println(content.MonthFromNum(i));
+                            System.out.println(content.MonthFromNum(i));  // тут то же, что и внизу, но мне лень описывать, потому что я такой себе разработчик
                             content.PrintMonthStatistics(allMonths.get(i));
                         }
+                    }
                     break;
                 case 5:
-                    if(!mothsHere || !yearsHere){
+                    if(!mothsHere || !yearsHere){    // Тут можно было бы оптимизировать код и не настраивать лишних пунктов меню, но мне лень и я такой себе разрабочик, поэтому пользователь должен ввести лишние цифры
                         allMonths = monthlyReport.ReadMonths();
                         allYears = yearlyReport.ReadYears();
-                    }
-                    for(int i = 0; i < allYears.size(); i++){
-                        content.PrintYearsStatics(allYears.get(i));
+                        System.out.println("Внимание, вы забыли о том, что нужно считать отчеты, разве я делал первые 2 пункта меню просто так?");
+                    }else{
+                        for(int i = 0; i < allYears.size(); i++){
+                            content.PrintYearsStatics(allYears.get(i));
+                        }
                     }
                     break;
                 case 0:
